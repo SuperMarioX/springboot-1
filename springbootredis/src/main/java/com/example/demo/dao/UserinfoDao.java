@@ -1,5 +1,7 @@
 package com.example.demo.dao;
 
+import org.springframework.cache.annotation.Cacheable;
+
 /** 
  * @description: 
  * @author viakiba
@@ -7,5 +9,7 @@ package com.example.demo.dao;
  */
 
 public interface UserinfoDao {
+	
+	@Cacheable(value = "usercache",keyGenerator = "wiselyKeyGenerator")  
 	public String selectUser();
 }
